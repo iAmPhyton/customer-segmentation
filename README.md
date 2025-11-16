@@ -1,9 +1,9 @@
 Customer Segmentation with K-Means & PCA
 Overview:
 
-This project applies unsupervised learning to group customers based on their purchasing behavior using K-Means Clustering and Principal Component Analysis (PCA).
+This project utilizes unsupervised learning to categorize customers based on their purchasing behavior, employing K-Means Clustering and Principal Component Analysis (PCA).
 The goal is to identify distinct customer segments to improve marketing strategies and decision-making.
-A simple Streamlit app was built to allow users to upload datasets, select features, and visualize clusters interactively.
+A simple Streamlit app was developed to enable users to upload datasets, select features, and interactively visualize clusters.
 
 Key Concepts:
 - K-Means Clustering: Groups similar customers into clusters based on feature similarity.
@@ -36,6 +36,3 @@ Author:
 - Chukwuemeka Eugene Obiyo
 - Data Scientist
 - praise609@gmail.com
-🧾 License
-
-This project is released under the MIT License — feel free to use, modify, and share with attribution.

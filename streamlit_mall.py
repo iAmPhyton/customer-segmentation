@@ -92,6 +92,31 @@ if uploaded_file is not None:
     st.write("Categorical Columns Encoded:", categorical_cols)
     st.write("Columns Dropped:", id_like_cols + high_missing + const_cols)
     st.write(f"Final feature count: {data.shape[1]}")
+    
+    #elbow method
+    st.markdown("### Elbow Method for Optimal K")
+    st.info("This helps determine the ideal number of clusters by measuring how much the within-cluster variance decreases as K increases.")
+    
+    max_k = st.slider("Select maximum K to test", 5, 15, 10)
+    inertia = []
+    K_range = range(1, max_k + 1)
+
+    for k in K_range:
+        model = KMeans(n_clusters=k, random_state=42)
+        model.fit(X_scaled)
+        inertia.append(model.inertia_)
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.plot(K_range, inertia, marker='o')
+    ax.set_xlabel("Number of Clusters (K)")
+    ax.set_ylabel("Inertia (Within-cluster Sum of Squares)")
+    ax.set_title("Elbow Method to Determine Optimal K")
+    st.pyplot(fig)
+
+    st.markdown(
+        "> **Tip:** Look for the point where the curve begins to 'bend' (the elbow, lol). "
+        "That’s usually the optimal number of clusters."
+    ) 
 
     #K-Means Clustering
     st.markdown("### K-Means Clustering")
